@@ -1,7 +1,7 @@
 {
   "versionCode": 5,
   "versionName": "2.5.0",
-  "downloadUrl": "https://github.com/obadaok/hassaba/raw/main/hassaba.apk",
+  "downloadUrl": "https://raw.githubusercontent.com/obadaok/hassaba/main/hassaba.apk",
   "fileSize": 14217980,
   "changelog": "🎉 إصدار 2.5.0 - إصلاحات وتحسينات شاملة:\n\n• إصلاح عرض النافذة العائمة: الأزرار والمحتوى الآن يستغلون كامل المساحة\n• الإدخال الصوتي: كتابة × و ÷ بدل * و / لعرض صحيح\n• إصلاح 34+ = : الآن يرجع 34 بدل خطأ في الصيغة\n• إزالة = و ≈ من المعاينة المباشرة للنتيجة\n• تبسيط صفحة التحديث وتحسين الأداء\n• إصلاح ألوان أزرار النافذة العائمة في الوضع الداكن\n• إصلاح ألوان القائمة الدائرية في الوضع الداكن",
   "mandatory": false,

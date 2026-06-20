@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_bg"
+    android:layoutDirection="ltr">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/headerCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginTop="40dp"
+        app:cardCornerRadius="@dimen/_20sdp"
+        app:cardElevation="2dp"
+        app:cardBackgroundColor="@color/card_surface"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_6sdp">
+
+            <com.mikepenz.iconics.view.IconicsImageView
+                android:id="@+id/btnBack"
+                android:layout_width="@dimen/_38sdp"
+                android:layout_height="@dimen/_38sdp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                app:iiv_icon="faw-arrow_left"
+                app:iiv_color="@color/icon_normal"
+                app:iiv_size="20dp"
+                android:padding="@dimen/_8sdp"
+                android:background="?attr/selectableItemBackgroundBorderless" />
+
+            <TextView
+                android:id="@+id/tvHistoryCapsuleTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="السجل"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="4dp"
+                android:background="@drawable/bg_capsule"
+                android:textColor="@color/bronze_accent"
+                android:textSize="@dimen/_13ssp"
+                android:fontFamily="sans-serif-medium"/>
+
+            <com.mikepenz.iconics.view.IconicsImageView
+                android:id="@+id/btnHelp"
+                android:layout_width="@dimen/_38sdp"
+                android:layout_height="@dimen/_38sdp"
+                android:layout_toStartOf="@+id/btnClear"
+                android:layout_centerVertical="true"
+                app:iiv_icon="faw-question_circle"
+                app:iiv_color="@color/bronze_accent"
+                app:iiv_size="20dp"
+                android:padding="@dimen/_8sdp"
+                android:background="?attr/selectableItemBackgroundBorderless" />
+
+            <com.mikepenz.iconics.view.IconicsImageView
+                android:id="@+id/btnClear"
+                android:layout_width="@dimen/_38sdp"
+                android:layout_height="@dimen/_38sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                app:iiv_icon="faw-trash"
+                app:iiv_color="@color/red_close"
+                app:iiv_size="20dp"
+                android:padding="@dimen/_8sdp"
+                android:background="?attr/selectableItemBackgroundBorderless" />
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/searchCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        app:cardCornerRadius="@dimen/_14sdp"
+        app:cardElevation="1dp"
+        app:cardBackgroundColor="@color/card_surface"
+        app:strokeColor="@color/border"
+        app:strokeWidth="1dp"
+        app:layout_constraintTop_toBottomOf="@+id/headerCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_4sdp">
+
+            <com.mikepenz.iconics.view.IconicsImageView
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                app:iiv_icon="faw-search"
+                app:iiv_color="@color/text_secondary"
+                app:iiv_size="16dp"
+                android:alpha="0.5" />
+
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:background="@null"
+                android:hint="بحث..."
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_secondary"
+                android:textSize="@dimen/_12ssp"
+                android:inputType="text"
+                android:maxLines="1"
+                android:fontFamily="sans-serif-light" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHistory"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:clipToPadding="false"
+        android:scrollbarStyle="outsideOverlay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchCard"
+        tools:listitem="@layout/item_history" />
+
+    <LinearLayout
+        android:id="@+id/tvEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <com.mikepenz.iconics.view.IconicsImageView
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            app:iiv_icon="faw-folder_open"
+            app:iiv_color="@color/text_secondary"
+            android:alpha="0.3"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="السجل فارغ حالياً"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="sans-serif-light" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

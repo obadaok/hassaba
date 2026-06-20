@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootContainer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layoutDirection="ltr">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/rootCardView"
+        android:layout_width="@dimen/_240sdp"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/card_surface"
+        app:cardCornerRadius="@dimen/_18sdp"
+        app:cardElevation="@dimen/_8sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:animateLayoutChanges="true">
+
+            <!-- رأس النافذة (قابل للسحب) -->
+            <LinearLayout
+                android:id="@+id/windowHeader"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_48sdp"
+                android:background="@drawable/header_gradient_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="@string/desc_drag_handle">
+
+                <!-- زر القائمة -->
+                <com.mikepenz.iconics.view.IconicsImageView
+                    android:id="@+id/btn_window_menu"
+                    android:layout_width="@dimen/_36sdp"
+                    android:layout_height="@dimen/_36sdp"
+                    app:iiv_icon="faw-ellipsis_v"
+                    app:iiv_color="@color/icon_normal"
+                    app:iiv_size="20dp"
+                    android:padding="@dimen/_6sdp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/desc_menu" />
+
+                <!-- زر التصغير (إخفاء لوحة الأرقام) -->
+                <com.mikepenz.iconics.view.IconicsImageView
+                    android:id="@+id/btn_window_minimize"
+                    android:layout_width="@dimen/_36sdp"
+                    android:layout_height="@dimen/_36sdp"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    app:iiv_icon="faw-minus_circle"
+                    app:iiv_color="@color/bronze_accent"
+                    app:iiv_size="20dp"
+                    android:padding="@dimen/_6sdp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/desc_minimize" />
+
+                <!-- منطقة السحب (غير قابلة للنقر بشكل فردي) -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:clickable="false"
+                    android:focusable="false">
+                    <com.mikepenz.iconics.view.IconicsImageView
+                        android:layout_width="30dp"
+                        android:layout_height="12dp"
+                        app:iiv_icon="faw-grip_lines"
+                        app:iiv_color="@color/text_secondary"
+                        android:alpha="0.4"
+                        android:contentDescription="@null" />
+                </LinearLayout>
+
+                <!-- أيقونة الآلة الحاسبة -->
+                <com.mikepenz.iconics.view.IconicsImageView
+                    android:id="@+id/icon_calculator"
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    app:iiv_icon="faw-calculator"
+                    app:iiv_color="@color/bronze_primary"
+                    app:iiv_size="18dp"
+                    android:contentDescription="@string/desc_calculator_icon" />
+
+            </LinearLayout>
+
+            <!-- منطقة العرض -->
+            <LinearLayout
+                android:id="@+id/displayArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/display_gradient_bg"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingVertical="@dimen/_8sdp"
+                android:minHeight="@dimen/_55sdp">
+
+                <TextView
+                    android:id="@+id/tvPreview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="10sp"
+                    android:visibility="invisible"
+                    android:fontFamily="sans-serif-light" />
+
+                <TextView
+                    android:id="@+id/tv_window_result"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="end|bottom"
+                    android:text="@string/initial_zero"
+                    android:textColor="@color/text_primary"
+                    android:fontFamily="sans-serif-medium"
+                    android:maxLines="1"
+                    app:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="14sp"
+                    app:autoSizeMaxTextSize="28sp"
+                    app:autoSizeStepGranularity="1sp" />
+
+                <!-- أزرار النسخ واللصق -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="start"
+                    android:layout_marginTop="@dimen/_6sdp">
+
+                    <com.mikepenz.iconics.view.IconicsImageView
+                        android:id="@+id/btn_copy"
+                        android:layout_width="@dimen/_32sdp"
+                        android:layout_height="@dimen/_32sdp"
+                        app:iiv_icon="faw-copy"
+                        app:iiv_color="@color/text_secondary"
+                        app:iiv_size="18dp"
+                        android:padding="@dimen/_6sdp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/desc_copy" />
+
+                    <com.mikepenz.iconics.view.IconicsImageView
+                        android:id="@+id/btn_paste"
+                        android:layout_width="@dimen/_32sdp"
+                        android:layout_height="@dimen/_32sdp"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        app:iiv_icon="faw-paste"
+                        app:iiv_color="@color/text_secondary"
+                        app:iiv_size="18dp"
+                        android:padding="@dimen/_6sdp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/desc_paste" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- لوحة المفاتيح (GridLayout) -->
+            <GridLayout
+                android:id="@+id/keypadGrid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alignmentMode="alignMargins"
+                android:columnCount="4"
+                android:rowCount="5"
+                android:padding="@dimen/_8sdp">
+
+                <!-- الصف الأول -->
+                <com.mikepenz.iconics.view.IconicsButton
+                    android:id="@+id/btn_ac"
+                    android:text="@string/ac"
+                    android:tag="AC"
+                    style="@style/FloatCalcBtn.Top"
+                    android:background="@drawable/btn_float_background"
+                    android:contentDescription="@string/ac" />
+
+                <com.mikepenz.iconics.view.IconicsButton
+                    android:id="@+id/btn_backspace"
+                    android:text="@string/backspace_icon"
+                    android:tag="⌫"
+                    style="@style/FloatCalcBtn.Top"
+                    android:background="@drawable/btn_float_background"
+                    android:contentDescription="@string/desc_backspace" />
+
+                <com.mikepenz.iconics.view.IconicsButton
+                    android:id="@+id/btn_percent"
+                    android:text="@string/percent_icon"
+                    android:tag="%"
+                    style="@style/FloatCalcBtn.Top"
+                    android:background="@drawable/btn_float_background"
+                    android:contentDescription="@string/desc_percent" />
+
+                <com.mikepenz.iconics.view.IconicsButton
+                    android:id="@+id/btn_divide"
+                    android:text="@string/divide_icon"
+                    android:tag="÷"
+                    style="@style/FloatCalcBtn.Op"
+                    android:background="@drawable/btn_float_operator_background"
+                    android:contentDescription="@string/desc_divide" />
+
+                <!-- الصف الثاني -->
+                <Button
+                    android:id="@+id/btn_7"
+                    android:text="@string/seven"
+                    android:tag="7"
+                    style="@style/FloatCalcBtn.Num"
+                    android:background="@drawable/btn_float_number_background"
+                    android:contentDescription="@string/seven" />
+
+                <Button
+                    android:id="@+id/btn_8"
+                    android:text="@string/eight"
+                    android:tag="8"
+                    style="@style/FloatCalcBtn.Num"
+                    android:background="@drawable/btn_float_number_background"
+                    android:contentDescription="@string/eight" />
+
+                <Button
+                    android:id="@+id/btn_9"
+                    android:text="@string/nine"
+                    android:tag="9"
+                    style="@style/FloatCalcBtn.Num"
+                    android:background="@drawable/btn_float_number_background"
+                    android:contentDescription="@string/nine" />
+
+                <com.mikepenz.iconics.view.IconicsButton
+                    android:id="@+id/btn_multiply"
+                    android:text="@string/multiply_icon"
+                    android:tag="×"
+                    style="@style/FloatCalcBtn.Op"
+                    android:background="@drawable/btn_float_operator_background"
+                    android:contentDescription="@string/desc_multiply" />
+
+                <!-- الصف الثالث -->
+                <Button
+                    android:id="@+id/btn_4"
+                    android:text="@string/four"
+                    android:tag="4"
+                    style="@style/FloatCalcBtn.Num"
+                    android:background="@drawable/btn_float_number_background"
+                    android:contentDescription="@string/four" />
+
+                <Button
+                    android:id="@+id/btn_5"
+                    android:text="@string/five"
+                    android:tag="5"
+                    style="@style/FloatCalcBtn.Num"
+                    android:background="@drawable/btn_float_number_background"
+                    android:contentDescription="@string/five" />
+
+                <Button
+                    android:id="@+id/btn_6"
+                    android:text="@string/six"
+                    android:tag="6"
+                    style="@style/FloatCalcBtn.Num"
+                    android:background="@drawable/btn_float_number_background"
+                    android:contentDescription="@string/six" />
+
+                <com.mikepenz.iconics.view.IconicsButton
+                    android:id="@+id/btn_minus"
+                    android:text="@string/minus_icon"
+                    android:tag="-"
+                    style="@style/FloatCalcBtn.Op"
+                    android:background="@drawable/btn_float_operator_background"
+                    android:contentDescription="@string/desc_minus" />
+
+                <!-- الصف الرابع -->
+                <Button
+                    android:id="@+id/btn_1"
+                    android:text="@string/one"
+                    android:tag="1"
+                    style="@style/FloatCalcBtn.Num"
+                    android:background="@drawable/btn_float_number_background"
+                    android:contentDescription="@string/one" />
+
+                <Button
+                    android:id="@+id/btn_2"
+                    android:text="@string/two"
+                    android:tag="2"
+                    style="@style/FloatCalcBtn.Num"
+                    android:background="@drawable/btn_float_number_background"
+                    android:contentDescription="@string/two" />
+
+                <Button
+                    android:id="@+id/btn_3"
+                    android:text="@string/three"
+                    android:tag="3"
+                    style="@style/FloatCalcBtn.Num"
+                    android:background="@drawable/btn_float_number_background"
+                    android:contentDescription="@string/three" />
+
+                <com.mikepenz.iconics.view.IconicsButton
+                    android:id="@+id/btn_plus"
+                    android:text="@string/plus_icon"
+                    android:tag="+"
+                    style="@style/FloatCalcBtn.Op"
+                    android:background="@drawable/btn_float_operator_background"
+                    android:contentDescription="@string/desc_plus" />
+
+                <!-- الصف الخامس: زر 0 يمتد لعمودين -->
+                <Button
+                    android:id="@+id/btn_0"
+                    android:text="@string/zero"
+                    android:tag="0"
+                    android:layout_width="0dp"
+                    android:layout_columnSpan="2"
+                    android:layout_columnWeight="2"
+                    style="@style/FloatCalcBtn.Num"
+                    android:background="@drawable/btn_float_number_background"
+                    android:contentDescription="@string/zero" />
+
+                <Button
+                    android:id="@+id/btn_dot"
+                    android:text="@string/dot"
+                    android:tag="."
+                    style="@style/FloatCalcBtn.Num"
+                    android:background="@drawable/btn_float_number_background"
+                    android:contentDescription="@string/desc_dot" />
+
+                <com.mikepenz.iconics.view.IconicsButton
+                    android:id="@+id/btn_equals"
+                    android:text="@string/equals_icon"
+                    android:tag="="
+                    style="@style/FloatCalcBtn.Equals"
+                    android:background="@drawable/btn_float_equals_background"
+                    android:contentDescription="@string/desc_equals" />
+
+            </GridLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

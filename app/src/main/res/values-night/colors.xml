@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bronze_primary">#B7410E</color>
+    <color name="bronze_accent">#D66A1F</color>
+    <color name="bronze_dark">#8A300A</color>
+
+    <color name="grey_bg">#121212</color>
+    <color name="grey_bg_dark">#000000</color>
+    <color name="card_surface">#1E1E1E</color>
+    <color name="card_surface_dark">#121212</color>
+
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_primary_dark">#FFFFFF</color>
+    <color name="text_secondary">#D2C4BD</color>
+    <color name="text_secondary_dark">#A6978F</color>
+
+    <color name="btn_number">#2C2C2C</color>
+    <color name="btn_number_dark">#1E1E1E</color>
+    <color name="btn_operator">#382C26</color>
+    <color name="btn_operator_dark">#281E19</color>
+    <color name="btn_equals">@color/bronze_primary</color>
+    <color name="btn_top">#3A2F29</color>
+    <color name="btn_top_dark">#2B231E</color>
+
+    <color name="icon_normal">#E3D6CF</color>
+    <color name="icon_normal_dark">#D2C4BD</color>
+
+    <color name="orange_btn">#FFB74D</color>
+    <color name="red_close">#EF5350</color>
+    <color name="success">#FF5722</color>
+    <color name="warning">#F59E0B</color>
+    <color name="danger">#EF4444</color>
+    <color name="border">#382C26</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="dialog_overlay">#99000000</color>
+
+    <color name="progress_track">#382C26</color>
+    <color name="progress_indicator">@color/bronze_primary</color>
+
+    <color name="update_title">#FFFFFF</color>
+    <color name="update_version">#D2C4BD</color>
+    <color name="update_changelog">#E3D6CF</color>
+
+    <color name="btn_update_text">#000000</color>
+    <color name="btn_cancel_text">#EF5350</color>
+</resources>

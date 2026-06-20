@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr"
+    android:background="@color/grey_bg"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/topBarCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        app:cardBackgroundColor="@color/card_surface"
+        app:cardCornerRadius="@dimen/_20sdp"
+        app:cardElevation="0dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_8sdp"
+            android:paddingVertical="@dimen/_10sdp">
+
+            <FrameLayout
+                android:id="@+id/btnFloatContainer"
+                android:layout_width="@dimen/_42sdp"
+                android:layout_height="@dimen/_42sdp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true">
+
+                <com.mikepenz.iconics.view.IconicsImageView
+                    android:id="@+id/btnFloat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:padding="@dimen/_8sdp"
+                    app:iiv_color="@color/icon_normal"
+                    app:iiv_icon="faw-window_restore"
+                    app:iiv_size="22dp" />
+
+                <TextView
+                    android:id="@+id/tvFloatBadge"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/bg_badge"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:visibility="gone"
+                    tools:text="2"
+                    tools:visibility="visible" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvToolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/bg_capsule"
+                android:fontFamily="sans-serif-medium"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="4dp"
+                android:text="الحسابة البرونزية"
+                android:textColor="@color/bronze_accent"
+                android:textSize="@dimen/_13ssp" />
+
+            <!-- زر المايك في الشريط العلوي -->
+            <com.mikepenz.iconics.view.IconicsImageView
+                android:id="@+id/btnVoiceInput"
+                android:layout_width="@dimen/_42sdp"
+                android:layout_height="@dimen/_42sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/_8sdp"
+                app:iiv_color="@color/bronze_accent"
+                app:iiv_icon="faw-microphone"
+                app:iiv_size="22dp" />
+
+            <!-- زر القائمة بجانب المايك -->
+            <com.mikepenz.iconics.view.IconicsImageView
+                android:id="@+id/btnMenu"
+                android:layout_width="@dimen/_42sdp"
+                android:layout_height="@dimen/_42sdp"
+                android:layout_toStartOf="@+id/btnVoiceInput"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/_8sdp"
+                app:iiv_color="@color/icon_normal"
+                app:iiv_icon="faw-bars"
+                app:iiv_size="22dp" />
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:id="@+id/previewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_24sdp"
+        android:paddingTop="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_12sdp"
+        app:layout_constraintTop_toBottomOf="@+id/topBarCard">
+
+        <TextView
+            android:id="@+id/tvPreview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:gravity="end"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/_18ssp"
+            android:visibility="invisible"
+            tools:text="= 1,500"
+            tools:visibility="visible" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/separatorLine"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginHorizontal="@dimen/_24sdp"
+        android:background="@drawable/gradient_separator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/previewContainer" />
+
+    <LinearLayout
+        android:id="@+id/displayContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="bottom|end"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_24sdp"
+        android:paddingBottom="@dimen/_16sdp"
+        app:layout_constraintBottom_toTopOf="@+id/keypadCard"
+        app:layout_constraintTop_toBottomOf="@+id/separatorLine">
+
+        <EditText
+            android:id="@+id/etInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="end"
+            android:inputType="none"
+            android:maxLines="2"
+            android:scrollHorizontally="true"
+            android:textColor="@color/text_primary"
+            android:textCursorDrawable="@drawable/cursor_custom"
+            android:textSize="@dimen/_50sdp"
+            tools:text="1250" />
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/keypadCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        app:cardBackgroundColor="@color/card_surface"
+        app:cardCornerRadius="@dimen/_24sdp"
+        app:cardElevation="@dimen/_4sdp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_12sdp">
+
+            <GridLayout
+                android:id="@+id/keypadGrid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alignmentMode="alignMargins"
+                android:columnCount="4"
+                android:rowCount="5">
+
+                <Button android:text="AC" style="@style/CalcBtn.Top" />
+                <Button android:text="⌫"  style="@style/CalcBtn.Top" />
+                <Button android:text="%"  style="@style/CalcBtn.Top" />
+                <Button android:text="÷"  style="@style/CalcBtn.Op" />
+
+                <Button android:text="7" style="@style/CalcBtn.Num" />
+                <Button android:text="8" style="@style/CalcBtn.Num" />
+                <Button android:text="9" style="@style/CalcBtn.Num" />
+                <Button android:text="×" style="@style/CalcBtn.Op" />
+
+                <Button android:text="4" style="@style/CalcBtn.Num" />
+                <Button android:text="5" style="@style/CalcBtn.Num" />
+                <Button android:text="6" style="@style/CalcBtn.Num" />
+                <Button android:text="-" style="@style/CalcBtn.Op" />
+
+                <Button android:text="1" style="@style/CalcBtn.Num" />
+                <Button android:text="2" style="@style/CalcBtn.Num" />
+                <Button android:text="3" style="@style/CalcBtn.Num" />
+                <Button android:text="+" style="@style/CalcBtn.Op" />
+
+                <Button
+                    android:text="0"
+                    style="@style/CalcBtn.Num"
+                    android:layout_columnSpan="2"
+                    android:layout_columnWeight="2" />
+                <Button android:text="." style="@style/CalcBtn.Num" />
+                <Button android:text="=" style="@style/CalcBtn.Equals" />
+
+            </GridLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

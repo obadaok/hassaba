@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        
+        <item
+            android:id="@+id/nav_vip"
+            android:icon="@drawable/ic_launcher"
+            android:title="حالة العضوية" />
+
+        <item
+            android:id="@+id/nav_special_mode"
+            android:icon="@drawable/ic_launcher"
+            android:title="وضع الماسة" />
+
+        <item
+            android:id="@+id/nav_float"
+            android:icon="@drawable/ic_launcher"
+            android:title="الحاسبة العائمة" />
+
+        <item
+            android:id="@+id/nav_theme"
+            android:icon="@drawable/ic_launcher"
+            android:title="تغيير المظهر" />
+
+        <item
+            android:id="@+id/nav_history"
+            android:icon="@drawable/ic_launcher"
+            android:title="سجل العمليات" />
+            
+    </group>
+</menu>

@@ -1,0 +1,81 @@
+<resources>
+    <!-- اسم التطبيق -->
+    <string name="app_name">الحسابة البلاتينية</string>
+
+    <!-- الإعدادات والأزرار العامة -->
+    <string name="action_settings">الإعدادات</string>
+    <string name="close_window">إغلاق</string>
+    <string name="minimize_window">تصغير</string>
+
+    <!-- أزرار الآلة الحاسبة الأساسية -->
+    <string name="initial_zero">0</string>
+    <string name="ac">AC</string>
+    <string name="backspace_icon">{faw-backspace}</string>
+    <string name="percent_icon">{faw-percentage}</string>
+    <string name="divide_icon">{faw-divide}</string>
+    <string name="multiply_icon">{faw-times}</string>
+    <string name="minus_icon">{faw-minus}</string>
+    <string name="plus_icon">{faw-plus}</string>
+    <string name="equals_icon">{faw-equals}</string>
+
+    <!-- الأرقام -->
+    <string name="zero">0</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="dot">.</string>
+
+    <!-- أوصاف إمكانية الوصول (Content Descriptions) -->
+    <string name="desc_drag_handle">منطقة سحب النافذة</string>
+    <string name="desc_menu">القائمة الدائرية</string>
+    <string name="desc_minimize">تصغير لوحة المفاتيح</string>
+    <string name="desc_calculator_icon">أيقونة الآلة الحاسبة</string>
+    <string name="desc_copy">نسخ النتيجة</string>
+    <string name="desc_paste">لصق نص</string>
+    <string name="desc_backspace">مسح الحرف الأخير</string>
+    <string name="desc_percent">نسبة مئوية</string>
+    <string name="desc_divide">قسمة</string>
+    <string name="desc_multiply">ضرب</string>
+    <string name="desc_minus">طرح</string>
+    <string name="desc_plus">جمع</string>
+    <string name="desc_dot">فاصلة عشرية</string>
+    <string name="desc_equals">يساوي</string>
+
+    <!-- نصوص أخرى محتملة (مثل رسائل Toast) -->
+    <string name="copied_to_clipboard">تم النسخ ✓</string>
+    <string name="paste_success">تم اللصق</string>
+    <string name="calculation_error">خطأ</string>
+
+    <!-- ==================== صفحة التحديث ==================== -->
+    <string name="update_checking_title">جاري البحث عن تحديثات...</string>
+    <string name="update_checking_subtitle">قد يستغرق هذا بضع ثوانٍ</string>
+    <string name="update_available_title">تحديث جديد متوفر</string>
+    <string name="update_version_label">الإصدار</string>
+    <string name="update_current_label">الحالي</string>
+    <string name="update_size_label">الحجم</string>
+    <string name="update_changelog_title">ما الجديد في هذا الإصدار</string>
+    <string name="update_changelog_placeholder">تفاصيل التحديث تظهر هنا</string>
+    <string name="update_button">تحديث من المتجر</string>
+    <string name="update_skip">تذكيري لاحقاً</string>
+    <string name="update_retry">إعادة التحقق</string>
+    <string name="update_up_to_date_title">تطبيقك محدّث بالكامل</string>
+    <string name="update_up_to_date_sub">لديك أحدث إصدار متاح حالياً</string>
+    <string name="update_current_version_label">الإصدار: </string>
+    <string name="update_close">العودة</string>
+    <!-- نصوص سياسة الخصوصية -->
+    <string name="privacy_title">خصوصيتك تهمنا</string>
+    <string name="privacy_subtitle">نلتزم بحماية بياناتك بالكامل</string>
+    <string name="privacy_intro">تطبيق \"الحسابة البرونزية VIP\" يعمل بخصوصية تامة. لا نقوم بجمع أي معلومات شخصية أو مشاركتها مع أي طرف ثالث. جميع العمليات الحسابية تُجرى محلياً على جهازك فقط.</string>
+    <string name="privacy_permissions_title">الأذونات المستخدمة ولماذا:</string>
+    <string name="privacy_permissions_details">• نظام النافذة العائمة (SYSTEM_ALERT_WINDOW)\n  يسمح بعرض الحاسبة فوق التطبيقات الأخرى لتسهيل الحسابات أثناء استخدامك لتطبيقات أخرى، دون أي وصول إلى بياناتها.\n\n• الاهتزاز (VIBRATE)\n  يوفر ردود فعل لمسية عند الضغط على الأزرار لتحسين تجربة المستخدم.\n\n• الإنترنت (INTERNET)\n  يستخدم فقط للتحقق من وجود تحديثات جديدة للتطبيق. لا يتم إرسال أي بيانات.\n\n• حالة الشبكة (ACCESS_NETWORK_STATE)\n  يستخدم للتأكد من وجود اتصال إنترنت قبل التحقق من التحديثات، لتجنب استهلاك البيانات.\n\n• تثبيت الحزم (REQUEST_INSTALL_PACKAGES)\n  يسمح بتثبيت تحديث التطبيق تلقائياً بعد موافقتك، دون الحاجة لتنزيله يدوياً.\n\n• التخزين الخارجي (WRITE_EXTERNAL_STORAGE حتى SDK 28)\n  يستخدم فقط لحفظ ملف التحديث مؤقتاً على الأجهزة القديمة (Android 9 والإصدارات الأقدم). لا يتم الوصول لأي ملفات أخرى.</string>
+    <string name="privacy_storage">تخزين البيانات:\nيتم تخزين سجل العمليات الحسابية فقط على جهازك، ولا يتم رفعه إلى أي خادم خارجي. يمكنك حذف جميع البيانات في أي وقت من إعدادات التطبيق أو النظام.</string>
+    <string name="privacy_no_sharing">مشاركة البيانات:\nلا نشارك أي بيانات مع أطراف ثالثة. التطبيق خالٍ تماماً من الإعلانات وأدوات التحليل أو التتبع.</string>
+    <string name="privacy_contact">للاستفسارات:\nhamdrake1@gmail.com</string>
+    <string name="privacy_accept_button">موافق وأوافق</string>
+</resources>

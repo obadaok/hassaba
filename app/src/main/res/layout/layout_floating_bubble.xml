@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:padding="@dimen/_8sdp"> <com.google.android.material.card.MaterialCardView
+    android:layout_width="@dimen/_52sdp"
+    android:layout_height="@dimen/_52sdp"
+    android:layout_gravity="center"
+    app:cardBackgroundColor="@color/bronze_primary"
+    android:alpha="0.15"
+    app:cardCornerRadius="@dimen/_26sdp"
+    app:cardElevation="0dp" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/bubble_card"
+        android:layout_width="@dimen/_42sdp"
+        android:layout_height="@dimen/_42sdp"
+        android:layout_gravity="center"
+        app:cardBackgroundColor="@color/card_surface"
+        app:cardCornerRadius="@dimen/_21sdp"
+        app:cardElevation="@dimen/_8sdp"
+        app:strokeColor="@color/bronze_primary"
+        app:strokeWidth="1dp"> <com.mikepenz.iconics.view.IconicsImageView
+        android:id="@+id/bubble_icon"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:layout_gravity="center"
+        app:iiv_color="@color/bronze_primary"
+        app:iiv_icon="faw-calculator"
+        app:iiv_size="24dp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

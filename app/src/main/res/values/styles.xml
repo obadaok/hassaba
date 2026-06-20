@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/bronze_primary</item>
+        <item name="colorPrimaryDark">@color/bronze_dark</item>
+        <item name="colorAccent">@color/bronze_accent</item>
+
+        <item name="android:windowBackground">@color/grey_bg</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:windowIsTranslucent">false</item>
+
+        <item name="android:statusBarColor">@color/grey_bg</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="CalcBtnBase" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/_60sdp</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_margin">@dimen/_5sdp</item>
+        <item name="cornerRadius">@dimen/_18sdp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:elevation">0dp</item>
+    </style>
+
+    <style name="CalcBtn.Num" parent="CalcBtnBase">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">@dimen/_22ssp</item>
+        <item name="backgroundTint">@color/btn_number</item>
+        <item name="rippleColor">#26B7410E</item> <item name="strokeColor">#F0EBE8</item> <item name="strokeWidth">1.5dp</item>
+    </style>
+
+    <style name="CalcBtn.Op" parent="CalcBtnBase">
+        <item name="android:textColor">@color/bronze_primary</item>
+        <item name="android:textSize">@dimen/_24ssp</item>
+        <item name="backgroundTint">@color/btn_operator</item>
+        <item name="android:textStyle">bold</item>
+        <item name="rippleColor">#33B7410E</item> <item name="strokeColor">#DDA993</item> <item name="strokeWidth">1dp</item>
+    </style>
+
+    <style name="CalcBtn.Equals" parent="CalcBtnBase">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">@dimen/_26ssp</item>
+        <item name="backgroundTint">@color/btn_equals</item>
+        <item name="android:textStyle">bold</item>
+        <item name="rippleColor">#40FFFFFF</item>
+        <item name="android:elevation">@dimen/_2sdp</item>
+    </style>
+
+    <style name="CalcBtn.Top" parent="CalcBtnBase">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">@dimen/_18ssp</item>
+        <item name="backgroundTint">@color/btn_top</item>
+        <item name="rippleColor">#1A757575</item>
+        <item name="strokeColor">#E0E0E0</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <style name="FloatCalcBtnBase" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/_46sdp</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_margin">@dimen/_3sdp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="FloatCalcBtn.Num" parent="FloatCalcBtnBase">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">@dimen/_17ssp</item>
+    </style>
+
+    <style name="FloatCalcBtn.Op" parent="FloatCalcBtnBase">
+        <item name="android:textColor">@color/bronze_primary</item>
+        <item name="android:textSize">@dimen/_18ssp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="FloatCalcBtn.Top" parent="FloatCalcBtnBase">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+    </style>
+
+    <style name="FloatCalcBtn.Equals" parent="FloatCalcBtnBase">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">@dimen/_20ssp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="CustomAlertDialogTheme" parent="Theme.Material3.DayNight.Dialog.Alert">
+        <item name="android:background">@drawable/bg_dialog_rounded</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+    </style>
+
+</resources>

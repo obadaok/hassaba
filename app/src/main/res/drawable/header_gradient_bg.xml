@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ملف: res/drawable/header_gradient_bg.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/card_surface"/>
+    <corners 
+        android:topLeftRadius="16dp"
+        android:topRightRadius="16dp"/>
+</shape>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ملف: res/drawable/delete_zone_bg.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:angle="90"
+        android:startColor="#55F44336"
+        android:centerColor="#77F44336"
+        android:endColor="#AAF44336"
+        android:type="linear"/>
+    <corners android:radius="20dp"/>
+</shape>

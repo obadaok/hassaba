@@ -56,7 +56,6 @@ class MainActivity : AppCompatActivity() {
     private var circularMenu: CircularMenuView? = null
     private var floatingWindowsCount = 0
 
-    // Voice input helper
     private lateinit var voiceInputHelper: VoiceInputHelper
     private var isVoiceListening = false
 
@@ -352,7 +351,7 @@ class MainActivity : AppCompatActivity() {
                     v.animate().scaleX(1f).scaleY(1f).setDuration(80)
                         .setInterpolator(OvershootInterpolator()).start()
                 }.start()
-            val key = v.tag?.toString() ?: ""
+            val key = (v as Button).text.toString()
             when (key) {
                 "AC" -> {
                     etInput.animate().alpha(0f).setDuration(100)
@@ -372,24 +371,21 @@ class MainActivity : AppCompatActivity() {
                 }
                 "=" -> {
                     val expression = etInput.text.toString().trimEnd('+', '-', '×', '÷', '%')
-                    val previewText = tvPreview.text.toString()
-                    if (expression.isNotEmpty() && previewText.isNotEmpty()) {
+                    if (expression.isNotEmpty()) {
                         val result = CalculatorEngine.evaluate(expression, roundToFour = true)
                         if (result.isNotEmpty() && result != "خطأ") {
-                            tvPreview.animate()
-                                .alpha(0f).translationYBy(40f).setDuration(200)
+                            displayContainer.animate()
+                                .scaleX(1.08f).scaleY(1.08f).setDuration(200)
+                                .setInterpolator(AccelerateDecelerateInterpolator())
                                 .withEndAction {
-                                    tvPreview.alpha = 1f
-                                    tvPreview.translationY = 0f
-                                    tvPreview.visibility = View.INVISIBLE
                                     HistoryManager.add(this@MainActivity, expression, result)
                                     etInput.setText(result)
                                     etInput.setSelection(result.length)
-                                    etInput.animate().scaleX(1.05f).scaleY(1.05f).setDuration(150)
-                                        .withEndAction {
-                                            etInput.animate().scaleX(1f).scaleY(1f).setDuration(200)
-                                                .setInterpolator(OvershootInterpolator()).start()
-                                        }.start()
+                                    tvPreview.visibility = View.INVISIBLE
+
+                                    displayContainer.animate()
+                                        .scaleX(1f).scaleY(1f).setDuration(300)
+                                        .setInterpolator(OvershootInterpolator()).start()
                                 }.start()
                         }
                     }
@@ -397,7 +393,7 @@ class MainActivity : AppCompatActivity() {
                 else -> handleInput(key)
             }
         }
-        for (i in 0 until grid.childCount) (grid.getChildAt(i) as? View)?.setOnClickListener(listener)
+        for (i in 0 until grid.childCount) (grid.getChildAt(i) as? Button)?.setOnClickListener(listener)
     }
 
     private fun setupLivePreviewAndFormatting() {
@@ -425,7 +421,6 @@ class MainActivity : AppCompatActivity() {
                     isUpdating = false
                     return
                 }
-                // المعاينة الفورية بتقريب 4 منازل عشرية فقط
                 val cleanText = text.trimEnd('+', '-', '×', '÷', '%')
                 val result = CalculatorEngine.evaluate(cleanText, roundToFour = true)
                 if (result.isNotEmpty() && result != "خطأ" && result != text) {

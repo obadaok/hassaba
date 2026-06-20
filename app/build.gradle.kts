@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
 }
 
 // قراءة إعدادات التوقيع من ملف منفصل (keystore.properties) للحفاظ على الأمان
@@ -97,6 +98,10 @@ dependencies {
 
     // 5. السجل
     implementation("com.google.code.gson:gson:2.10.1")
+
+    implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-database")
     
     // 6. مكتبات الأبعاد
     implementation("com.intuit.sdp:sdp-android:1.1.0")

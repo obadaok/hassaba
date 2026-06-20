@@ -74,7 +74,6 @@
                 android:textColor="@color/bronze_accent"
                 android:textSize="@dimen/_13ssp" />
 
-            <!-- زر المايك في الشريط العلوي -->
             <com.mikepenz.iconics.view.IconicsImageView
                 android:id="@+id/btnVoiceInput"
                 android:layout_width="@dimen/_42sdp"
@@ -87,7 +86,6 @@
                 app:iiv_icon="faw-microphone"
                 app:iiv_size="22dp" />
 
-            <!-- زر القائمة بجانب المايك -->
             <com.mikepenz.iconics.view.IconicsImageView
                 android:id="@+id/btnMenu"
                 android:layout_width="@dimen/_42sdp"
@@ -105,13 +103,13 @@
     </com.google.android.material.card.MaterialCardView>
 
     <LinearLayout
-        android:id="@+id/previewContainer"
+        android:id="@+id/displayContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_height="0dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
         android:paddingHorizontal="@dimen/_24sdp"
-        android:paddingTop="@dimen/_12sdp"
-        android:paddingBottom="@dimen/_12sdp"
+        app:layout_constraintBottom_toTopOf="@+id/keypadCard"
         app:layout_constraintTop_toBottomOf="@+id/topBarCard">
 
         <TextView
@@ -119,44 +117,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
-            android:gravity="end"
+            android:gravity="center"
+            android:textAlignment="center"
             android:textColor="@color/text_secondary"
-            android:textSize="@dimen/_18ssp"
+            android:textSize="@dimen/_22ssp"
             android:visibility="invisible"
-            tools:text="= 1,500"
+            tools:text="1,500"
             tools:visibility="visible" />
-    </LinearLayout>
-
-    <View
-        android:id="@+id/separatorLine"
-        android:layout_width="0dp"
-        android:layout_height="2dp"
-        android:layout_marginHorizontal="@dimen/_24sdp"
-        android:background="@drawable/gradient_separator"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/previewContainer" />
-
-    <LinearLayout
-        android:id="@+id/displayContainer"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:gravity="bottom|end"
-        android:orientation="vertical"
-        android:paddingHorizontal="@dimen/_24sdp"
-        android:paddingBottom="@dimen/_16sdp"
-        app:layout_constraintBottom_toTopOf="@+id/keypadCard"
-        app:layout_constraintTop_toBottomOf="@+id/separatorLine">
 
         <EditText
             android:id="@+id/etInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
             android:background="@null"
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:fontFamily="sans-serif-medium"
-            android:gravity="end"
+            android:gravity="center"
+            android:textAlignment="center"
             android:inputType="none"
             android:maxLines="2"
             android:scrollHorizontally="true"
@@ -190,33 +169,29 @@
                 android:columnCount="4"
                 android:rowCount="5">
 
-                <Button android:text="AC" style="@style/CalcBtn.Top" />
-                <Button android:text="⌫"  style="@style/CalcBtn.Top" />
-                <Button android:text="%"  style="@style/CalcBtn.Top" />
-                <Button android:text="÷"  style="@style/CalcBtn.Op" />
+                <Button android:text="AC" android:tag="AC" style="@style/CalcBtn.Top" />
+                <com.mikepenz.iconics.view.IconicsButton android:text="@string/backspace_icon" android:tag="⌫" style="@style/CalcBtn.Top" />
+                <com.mikepenz.iconics.view.IconicsButton android:text="@string/percent_icon" android:tag="%" style="@style/CalcBtn.Top" />
+                <com.mikepenz.iconics.view.IconicsButton android:text="@string/divide_icon" android:tag="÷" style="@style/CalcBtn.Op" />
 
-                <Button android:text="7" style="@style/CalcBtn.Num" />
-                <Button android:text="8" style="@style/CalcBtn.Num" />
-                <Button android:text="9" style="@style/CalcBtn.Num" />
-                <Button android:text="×" style="@style/CalcBtn.Op" />
+                <Button android:text="7" android:tag="7" style="@style/CalcBtn.Num" />
+                <Button android:text="8" android:tag="8" style="@style/CalcBtn.Num" />
+                <Button android:text="9" android:tag="9" style="@style/CalcBtn.Num" />
+                <com.mikepenz.iconics.view.IconicsButton android:text="@string/multiply_icon" android:tag="×" style="@style/CalcBtn.Op" />
 
-                <Button android:text="4" style="@style/CalcBtn.Num" />
-                <Button android:text="5" style="@style/CalcBtn.Num" />
-                <Button android:text="6" style="@style/CalcBtn.Num" />
-                <Button android:text="-" style="@style/CalcBtn.Op" />
+                <Button android:text="4" android:tag="4" style="@style/CalcBtn.Num" />
+                <Button android:text="5" android:tag="5" style="@style/CalcBtn.Num" />
+                <Button android:text="6" android:tag="6" style="@style/CalcBtn.Num" />
+                <com.mikepenz.iconics.view.IconicsButton android:text="@string/minus_icon" android:tag="-" style="@style/CalcBtn.Op" />
 
-                <Button android:text="1" style="@style/CalcBtn.Num" />
-                <Button android:text="2" style="@style/CalcBtn.Num" />
-                <Button android:text="3" style="@style/CalcBtn.Num" />
-                <Button android:text="+" style="@style/CalcBtn.Op" />
+                <Button android:text="1" android:tag="1" style="@style/CalcBtn.Num" />
+                <Button android:text="2" android:tag="2" style="@style/CalcBtn.Num" />
+                <Button android:text="3" android:tag="3" style="@style/CalcBtn.Num" />
+                <com.mikepenz.iconics.view.IconicsButton android:text="@string/plus_icon" android:tag="+" style="@style/CalcBtn.Op" />
 
-                <Button
-                    android:text="0"
-                    style="@style/CalcBtn.Num"
-                    android:layout_columnSpan="2"
-                    android:layout_columnWeight="2" />
-                <Button android:text="." style="@style/CalcBtn.Num" />
-                <Button android:text="=" style="@style/CalcBtn.Equals" />
+                <Button android:text="0" android:tag="0" style="@style/CalcBtn.Num" android:layout_columnSpan="2" android:layout_columnWeight="2" />
+                <Button android:text="." android:tag="." style="@style/CalcBtn.Num" />
+                <Button android:text="=" android:tag="=" style="@style/CalcBtn.Equals" />
 
             </GridLayout>
         </LinearLayout>

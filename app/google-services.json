@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "164233189036",
+    "firebase_url": "https://bida-ai-999-default-rtdb.firebaseio.com",
+    "project_id": "bida-ai-999",
+    "storage_bucket": "bida-ai-999.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:164233189036:android:b3fd4e9c11070b32627109",
+        "android_client_info": {
+          "package_name": "com.dahab"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMnEpPuJdx2gcHuGjUp8mfCZDh3_fIrsk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:164233189036:android:9d6e095f43c186ba627109",
+        "android_client_info": {
+          "package_name": "com.hesabat.dahab"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMnEpPuJdx2gcHuGjUp8mfCZDh3_fIrsk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:164233189036:android:1a8f67dc4a53d201627109",
+        "android_client_info": {
+          "package_name": "com.platinum.vip.hasiba"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMnEpPuJdx2gcHuGjUp8mfCZDh3_fIrsk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

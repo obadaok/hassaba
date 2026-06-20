@@ -28,9 +28,10 @@ object HistoryManager {
     }
 
     fun add(context: Context, expr: String, res: String) {
-        ensureLoaded(context) // تأكد من التحميل قبل الإضافة
+        ensureLoaded(context)
         historyList?.add(0, HistoryItem(expr, res, System.currentTimeMillis()))
         saveToPrefs(context)
+        FirebaseHistoryHelper.addHistory(context, expr, res)
     }
 
     fun getAll(context: Context): List<HistoryItem> {

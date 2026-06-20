@@ -257,7 +257,7 @@
                 app:cardBackgroundColor="@color/card_surface"
                 app:cardCornerRadius="28dp"
                 app:cardElevation="6dp"
-                app:strokeColor="@color/success"
+                app:strokeColor="@color/bronze_accent"
                 app:strokeWidth="1.5dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent">

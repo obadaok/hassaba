@@ -33,7 +33,7 @@
         <item name="android:textColor">@color/text_primary</item>
         <item name="android:textSize">@dimen/_22ssp</item>
         <item name="backgroundTint">@color/btn_number</item>
-        <item name="rippleColor">#26B7410E</item> <item name="strokeColor">#F0EBE8</item> <item name="strokeWidth">1.5dp</item>
+        <item name="rippleColor">#26B7410E</item> <item name="strokeColor">@color/border</item> <item name="strokeWidth">1.5dp</item>
     </style>
 
     <style name="CalcBtn.Op" parent="CalcBtnBase">
@@ -41,7 +41,7 @@
         <item name="android:textSize">@dimen/_24ssp</item>
         <item name="backgroundTint">@color/btn_operator</item>
         <item name="android:textStyle">bold</item>
-        <item name="rippleColor">#33B7410E</item> <item name="strokeColor">#DDA993</item> <item name="strokeWidth">1dp</item>
+        <item name="rippleColor">#33B7410E</item> <item name="strokeColor">@color/border</item> <item name="strokeWidth">1dp</item>
     </style>
 
     <style name="CalcBtn.Equals" parent="CalcBtnBase">
@@ -58,7 +58,7 @@
         <item name="android:textSize">@dimen/_18ssp</item>
         <item name="backgroundTint">@color/btn_top</item>
         <item name="rippleColor">#1A757575</item>
-        <item name="strokeColor">#E0E0E0</item>
+        <item name="strokeColor">@color/border</item>
         <item name="strokeWidth">1dp</item>
     </style>
 
